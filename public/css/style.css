@@ -1,0 +1,11 @@
+body{
+    
+    background-image: url('/images/an1.jpg');
+    background-size: cover;
+    font-family: sans-serif;  
+    background-color: slateblue
+}
+
+#about{
+  margin-left: 150px;  
+}
