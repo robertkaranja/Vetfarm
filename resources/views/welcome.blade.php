@@ -81,9 +81,19 @@
                 align-items: center;
                 background-color: grey;
             }
+            .all{
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                opacity: 0.7;
+                position: absolute;
+                top:0;
+            }
+            
         </style>
     </head>
     <body>
+    <div class="all">
     <div class="well">
                 @if (Route::has('login'))
                     <div class="top-right links">
@@ -112,6 +122,7 @@
                 <a  href="{{ url('/home') }}" class="btn btn-primary js-scroll-trigger btn btn-group-lg" style="margin-left: 600px"><strong>Get Started</strong></a> 
         </div>
             
+        </div>
         </div>
     </body>
 </html>

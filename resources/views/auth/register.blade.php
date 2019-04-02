@@ -12,7 +12,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">First Name</label>
+                            <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -25,24 +25,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+                                <label for="last_name" class="col-md-4 control-label">Last Name</label>
 
-<!-- added -->
-                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Last Name</label>
+                                <div class="col-md-6">
+                                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
 
-                            <div class="col-md-6">
-                                <input id="last_name" type="text" class="form-control" name="last_name" required>
-                            </div>
+                                    @if ($errors->has('last_name'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('last_name') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">User Name</label>
-
-                            <div class="col-md-6">
-                                <input id="user_name" type="text" class="form-control" name="user_name" required>
-                            </div>
-                        </div>
-<!-- ends here -->
 
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -59,35 +55,6 @@
                             </div>
                         </div>
 
-
-<!-- added 
-                                <div class="form-group col-md-6">
-                                    <label for="company-name">Name<span class="required">*</span></label>
-
-                                    <input placeholder="Enter Name"
-                                            id="company-name"
-                                            required
-                                            name="name"
-                                            spellcheck="false"
-                                            class="form-control"
-                                            
-                                            />
-
-                                    </div>
-                                    
-
-<!-- ends here -->
-
-<!-- added 
-
-                                    <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-<!-- ends here -->
 
 
 
