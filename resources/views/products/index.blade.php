@@ -34,7 +34,7 @@
     <a href="/products/{{$product->id}}/edit" class=" btn btn-primary">Edit Details </a> 
 
     <a href="" class="btn btn-danger"  onclick="
-                          var result =confirm('Are you sure you want to delete Company')
+                          var result =confirm('Are you sure you want to remove product')
                           if(result) {
                               event.preventDefault();
                               document.getElementById('delete-form').submit();

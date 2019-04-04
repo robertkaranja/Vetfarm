@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Notification;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -11,7 +13,14 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     
+    public function news(){
+         $notifications = Notification::all();
+
+        return view('admin')->with('notifications', $notifications);
+    }
+    */
+
     public function index()
     {
         // fetching users
@@ -31,6 +40,27 @@ class UsersController extends Controller
         $users = User::all();
 
         return view('admin')->with('users', $users);
+    }
+
+    public function approveVet(Request $request)
+    {
+
+        $user = User::find($request->userId);
+        $approval = $request->status;
+
+        if ($approval == 'on') {
+                
+                $approval=1;
+            } 
+            else
+            {
+                $approval=0;
+            }  
+
+            $user->status=$approval;
+            $user->save();
+
+            return back();
     }
 
 
@@ -68,6 +98,7 @@ class UsersController extends Controller
             'first_name'=> $request->input('first_name'),
             'last_name'=> $request->input('last_name'),
             'email'=> $request->input('email'),
+            
             
         ]);
     }

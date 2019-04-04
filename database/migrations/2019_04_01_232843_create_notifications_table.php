@@ -19,6 +19,7 @@ class CreateNotificationsTable extends Migration
             $table->longtext('description');
             $table->integer('user_id')->unsigned();
             $table->string('username');
+            $table->boolean('approve')->default(false);            
             $table->timestamps();
             
              });

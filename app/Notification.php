@@ -12,6 +12,7 @@ class Notification extends Model
     	'description',
     	'user_id',
     	'username',
+    	'approve',
 
     ];
 }

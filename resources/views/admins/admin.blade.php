@@ -4,7 +4,7 @@
 
 
 
-    <!-- Sidebar =====================================================================
+    <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Admin Panel</div>
       <div class="list-group list-group-flush">
@@ -15,7 +15,7 @@
         <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
         
-      </div>-->
+      </div>
     
     <!-- /#sidebar-wrapper -->
 
@@ -27,13 +27,11 @@
 					<table data-vertable="ver1">
 						<thead>
 							<tr class="row100 head">
-								<button class="btn btn-success" style="float: right;">View All Veterinaries</button><br>
 								<th class="column100 column1" data-column="column1">#</th>
 								<th class="column100 column3" data-column="column3">User Name</th>
 								<th class="column100 column4" data-column="column4">First Name</th>
 								<th class="column100 column5" data-column="column5">Last Name</th>
-								<th class="column100 column5" data-column="column5">Cert N0.</th>
-								<th class="column100 column5" data-column="column5">Approve</th>
+								<th class="column100 column5" data-column="column5">Status</th>
 								<th class="column100 column5" data-column="column5">Action</th>
 								
 							</tr>
@@ -47,31 +45,9 @@
 								<td class="column100 column2" data-column="column2">{{$user->name}}</td>
 								<td class="column100 column3" data-column="column3">{{$user->last_name}}</td>
 								<td class="column100 column4" data-column="column4">{{$user->email}}</td>
-								<td class="column100 column4" data-column="column4">{{$user->cert_number}}</td>
-								<td class="column100 column4" data-column="column4" style="color: blue;">
-						
-		
-							
-			
-									<form action="{{url('/approve')}}" method="POST">
-										{{csrf_field()}}
-					                 
-					                 	<input <?php if ($user->status == 1) {
-					                 		echo "checked";
-					                 	} ?> type="checkbox" name="status">
-
-					                 <input type="hidden" name="userId" value="{{$user->id}}">
-									<input style="margin-left: 20px;" class="btn btn-primary" type="submit" value="Approve" >
-					                 
-										
-
-									</form>
-
-							
-
-</td>
+								<td class="column100 column4" data-column="column4" style="color: blue;">Approved</td>
 								<td class="column100 column4" data-column="column4">
-									
+									<a href="#" class=" btn btn-primary">Approve </a> 
 									
 									<a href="" class="btn btn-danger"  onclick="
 					                          var result =confirm('Are you sure you want to remove user')
@@ -101,6 +77,8 @@
 		</div>
 	</div>
 
+
+	
 	
 </div>
 
@@ -121,7 +99,11 @@
             };
 
 
-            
+            function displayNews(){
+
+
+            	document.querySelector('#news').style.display = 'flex';
+            }
   </script>
  
   <script>

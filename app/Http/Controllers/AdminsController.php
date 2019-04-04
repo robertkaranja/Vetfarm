@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Notification;
 use App\Product;
 use App\Admin;
 use Illuminate\Support\Facades\Auth;
@@ -17,9 +17,8 @@ class AdminsController extends Controller
     public function index()
     {
         //
-        $products = Product::all();
-
-        return view('products.index')->with('products', $products);
+       $notifications = Notification::all();
+        return view('admin')->with('notifications', $notifications);
     }
 
     /**

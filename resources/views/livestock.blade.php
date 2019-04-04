@@ -8,7 +8,7 @@
 
                 <ul class="list-unstyled">
                 @foreach($products as $product)
-                <li class="list-group-item"><a href="/companies/{{ $company->id}}"> {{ $product->price}}</a><li>
+                        <li class="list-group-item"><a href="/companies/{{ $company->id}}"> {{ $product->price}}</a><li>
                 @endforeach
                 </ul>
 

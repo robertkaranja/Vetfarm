@@ -21,6 +21,10 @@
                 height: 100vh;
                 margin: 0;
             }
+            footer{
+                
+                color: green;
+            }
 
             .full-height {
                 height: 100vh;
@@ -85,7 +89,7 @@
                 width: 100%;
                 height: 100%;
                 background-color: black;
-                opacity: 0.7;
+                opacity: 0.2;
                 position: absolute;
                 top:0;
             }
@@ -108,7 +112,22 @@
 
        
        <div class="well">
-                <h1><strong>Welcome to VetFarm</strong></h1> 
+                
+        </div>
+            
+        </div>
+        </div>
+
+<footer>
+    Copyright
+</footer>
+
+    </body>
+</html>
+
+
+<!-- 
+    <h1><strong>Welcome to VetFarm</strong></h1> 
             
                 <p style="color: limegreen;"><b><strong> <u> In this platform you have access to services like:<br>
                 </u></b></strong></p> 
@@ -120,9 +139,5 @@
                 </b></strong></p>
                 
                 <a  href="{{ url('/home') }}" class="btn btn-primary js-scroll-trigger btn btn-group-lg" style="margin-left: 600px"><strong>Get Started</strong></a> 
-        </div>
-            
-        </div>
-        </div>
-    </body>
-</html>
+
+                -->

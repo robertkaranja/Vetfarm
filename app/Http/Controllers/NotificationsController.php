@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Notification;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class NotificationsController extends Controller
@@ -11,11 +13,21 @@ class NotificationsController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+    
+
+    public function them() 
+    {
+
+        $users = User::all();
+
+        return view('users.index')->with('users', $users);
+    }
      */
+
     public function index()
     {
         //
-        $notifications = Notification::all();
+        $notifications = Notification::where('approve', '1')->paginate(1);
         return view('notification')->with('notifications', $notifications);
     }
 
@@ -29,6 +41,12 @@ class NotificationsController extends Controller
         //
     }
 
+    public function manage(Notification $notification){
+        $notifications = Notification::all();
+        return view('dash')->with('notifications', $notifications);
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -38,6 +56,40 @@ class NotificationsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $notification = Notification::create([
+            
+            
+            'description'=> $request->input('description'),
+            'user_id'=> Auth::user()->id,
+            'username'=> Auth::user()->name,
+        ]);
+            return back();
+    }
+
+     public function approval(Request $request, Notification $notification)
+
+    {
+        //
+
+        $notification = Notification::find($request->notificationId);
+        $approveVal = $request->approve;
+
+        if ($approveVal == 'on') {
+                
+                $approveVal=1;
+            } 
+            else
+            {
+                $approveVal=0;
+            }  
+
+            $notification->approve=$approveVal;
+            $notification->save();
+
+            return back();
+            
+            
     }
 
     /**

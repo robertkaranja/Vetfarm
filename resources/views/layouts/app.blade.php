@@ -10,6 +10,15 @@
 
     <title>{{ config('app.name', 'vetfarm') }}</title>
     <style>
+
+    #map{
+        height: 400px;
+        width: 100%;
+    }
+    .notifications{
+        display: none;
+    }
+
     .bg-modal{
         width: 91.8%;
         height: 100%;
@@ -349,12 +358,14 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Table ]*/
-
+.weka{
+    display: none;
+}
 .limiter {
   width: 80%;
   margin-top: -10px;
   margin-left: 200px;
-  display: none;
+  display: flex;
 }
 
 .container-table100 {
@@ -517,14 +528,31 @@ th, td {
                           <li>
                             <a href="#"><strong>my Livestock</strong></a>
                         </li>
+                         <li>
+                            <a href="/notifications">
+                                <strong>News</strong>
+
+                            </a>
+                            </li>
                         <li>
                             <a href="/profile"><strong>My Profile</strong></a>
                         </li>
 
-@if(Auth::user()->id == 7)
-                        <li>
-                            <a href="/admin"><strong>Admin</strong></a>
-                        </li>
+@if(Auth::user()->id == 1)
+            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                    Admin <span class="caret"></span>
+                                </a>                             
+                            
+                                
+                                <ul class="dropdown-menu">
+                                <li><a href="/admins">Manage All Users</a></li>
+                                <li><a href="/manage">News</a></li>
+                                
+                                
+                                </ul>
+            </li>
+                        
   
     @endif 
 
@@ -548,14 +576,18 @@ th, td {
                                 </ul>
                             </li>
 
-                                <!--News Place-->
+                           
+
+
+                                <!--News Place
 
                     <li class="dropdown">
-                        @foreach($notifications as $notification)
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                        
+                        
+                                <a href="/notifications" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     
-                                 <i class="fa fa-bell"></i>
-                                    <span class="badge badge-light">{{count($notifications)}}</span>
+                                 <i class="fa fa-notification">News</i>
+                                    <span class="badge badge-light">3</span>
 
 
                                 </a>
@@ -563,13 +595,13 @@ th, td {
                                 <ul class="dropdown-menu">
                                     
                                     <li style="background-color: lightgray">
-                                        <a href="#">{{$notification->description}}</a>
+                                        <a href="#"></a>
                                        
                                     </li>
 
-                                    @endforeach
+                                    
                                 </ul>
-                            </li>
+                            </li>    -->
 
 
 

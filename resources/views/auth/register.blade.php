@@ -80,6 +80,44 @@
                             </div>
                         </div>
 
+                       
+                      <!--  <div class="form-group" style="margin-left: 70px; color: red;">
+                            <label>Register as Veterinary</label>
+                            <input style="margin-left: 150px;" type="checkbox" name="status" id="myCheck" onclick="displayCert()">
+
+                        </div>
+                        <p  id="text" style="display:none">Checkbox is CHECKED!</p>
+
+                         Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()">
+                        -->
+
+                        <div class="form-group" style="color: red">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label> 
+                                        <strong>
+                                        <input type="checkbox" id="myCheck" onclick="myFunction()"> Register as Veterinary
+                                        </strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div id="text" style="display:none" class="form-group{{ $errors->has('cert_number') ? ' has-error' : '' }}" >
+                                <label for="cert_number" class="col-md-4 control-label">Enter Veterinary Certificate Number</label>
+
+                                <div class="col-md-6">
+                                    <input id="cert_number" type="text" class="form-control" name="cert_number" value="{{ old('cert_number') }}" autofocus>
+
+                                    @if ($errors->has('cert_number'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('cert_number') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                        </div>
+                    
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -93,4 +131,21 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+
 @endsection

@@ -22,8 +22,17 @@ Route::get('/', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('/admin', 'UsersController@adminUsers');
-/*Route::get('/admin', 'UsersController@deleteUsers');*/
+
+Route::get('/maps', function () {
+    return view('maps');
+});
+
+
+Route::get('/admins', 'UsersController@adminUsers');
+Route::post('/approve', 'UsersController@approveVet');
+Route::get('/manage', 'NotificationsController@manage');
+Route::post('/toggle-approve', 'NotificationsController@approval');
+/*Route::get('/home', 'NotificationsController@index');*/
 
 Auth::routes();
 
@@ -31,5 +40,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('products', 'ProductsController');
 Route::resource('users', 'UsersController');
 Route::resource('notifications', 'NotificationsController');
+
 
 
