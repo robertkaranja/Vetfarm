@@ -19,7 +19,7 @@
 @endforeach
         <div style="margin-left: 50px;">
          {{$notifications->links()}}   
-         <button class="btn btn-primary" onclick="displayNotifications()" style="float: right;">Post News<button>
+         
         </div>
         
 @endif
@@ -46,7 +46,7 @@
  </div>
 </form>
 </div>
-
+<button class="btn btn-primary" onclick="displayNotifications()" style="float: right;">Post News<button>
 
     <script type="text/javascript">
         

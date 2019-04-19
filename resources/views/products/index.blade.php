@@ -64,10 +64,10 @@
     <div class="close" style="font-size: 42px;">+</div>
     
       
-      <h4>Robert Karanja</h4>
+      <h4>{{$product->username}}</h4>
       <img class="img-rounded" src="/images/an1.jpg" style="width: 150px; length: 150px;"></br>
 
-      <p><strong>Mobile: 0728 564 211 </strong></p>
+      <p><strong>Mobile: {{$product->phone}} </strong></p>
 
       <h4 style="color: green"><u>Description</u></h4>
 

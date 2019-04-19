@@ -501,10 +501,9 @@ th, td {
                         @guest
                         
                                 <li><a href="{{ route('login') }}">Login</a></li>
-                           <!-- <li><a href="{{ route('register') }}">Register</a></li>-->
-                            
+                           <li><a href="{{ route('register') }}">Register</a></li>                            
 
-                             <li class="dropdown">
+                            <!-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                    Register <span class="caret"></span>
                                 </a>                             
@@ -514,7 +513,7 @@ th, td {
                                 <li><a href="{{ route('register') }}">Register as Farmer</a></li>
                                 <li><a href="#">Register as Veterinary</a></li>
                                 </ul>
-            </li>
+                              </li> -->
             
 
 
@@ -523,20 +522,18 @@ th, td {
                             <a href="/products"><strong> Buy and Sell </strong></a>
                         </li>
                         <li>
-                            <a href="#"><strong>Find a Veterinary</strong></a>
+                            <a href="/maps"><strong>Find a Veterinary</strong></a>
                         </li>
-                          <li>
-                            <a href="#"><strong>my Livestock</strong></a>
-                        </li>
+                          
                          <li>
                             <a href="/notifications">
                                 <strong>News</strong>
 
                             </a>
                             </li>
-                        <li>
+                        <!--<li>
                             <a href="/profile"><strong>My Profile</strong></a>
-                        </li>
+                        </li>-->
 
 @if(Auth::user()->id == 1)
             <li class="dropdown">

@@ -11,6 +11,7 @@ class Product extends Model
         'description',
         'price',
         'location',
+        'phone',
         'user_id',
         'username',
        /** 'image',**/

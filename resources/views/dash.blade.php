@@ -8,6 +8,7 @@
 		<tr style="color: white;">
 			<th>Notification</th>
 			<th>Approval</th>
+			<th>Remove News</th>
 		</tr>
 	</thead>
 
@@ -30,6 +31,27 @@
 
 				</form>
 
+			</td>
+			<td>
+				
+				<a href="" class="btn btn-danger"  onclick="
+					                          var result =confirm('Are you sure you want to remove news')
+					                          if(result) {
+					                              event.preventDefault();
+					                              document.getElementById('delete-form').submit();
+
+					                            }">
+
+					                            Remove
+                            		</a>
+
+										      <form id="delete-form" action="{{ route('notifications.destroy', [$notification->id]) }}"
+										                method="POST" style="display: none;">
+
+										                <input type="hidden" name="_method" value="delete">
+										                {{ csrf_field() }}
+										      </form>
+								</td>
 			</td>
 		</tr>
 

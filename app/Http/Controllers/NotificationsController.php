@@ -27,7 +27,7 @@ class NotificationsController extends Controller
     public function index()
     {
         //
-        $notifications = Notification::where('approve', '1')->paginate(1);
+        $notifications = Notification::where('approve', '1')->paginate(3);
         return view('notification')->with('notifications', $notifications);
     }
 
@@ -135,5 +135,14 @@ class NotificationsController extends Controller
     public function destroy(Notification $notification)
     {
         //
+        $findnotification = Notification::find($notification->id);
+        If($findnotification->delete()){
+            //redirect
+            return back()
+            ->with('success', 'notification removed successfully');
+        }
+        
+        return back()->withInput()->with('error', 'user was not removed');
     }
+    
 }

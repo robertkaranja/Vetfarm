@@ -56,6 +56,7 @@ class ProductsController extends Controller
             'description'=> $request->input('description'),
             'user_id'=> Auth::user()->id,
             'username'=> Auth::user()->name,
+            'phone'=> Auth::user()->phone,
         ]);
 
         if($product){

@@ -74,7 +74,7 @@
     </div>
 
 
-     <div class="form-group">
+   <!--  <div class="form-group">
     <label for="product-name">Upload a Picture<span class="required">*</span></label>
 
     <input type="file" 
@@ -84,7 +84,7 @@
             
             />
 
-    </div>
+    </div>-->
     
     
     

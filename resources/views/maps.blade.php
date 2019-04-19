@@ -10,8 +10,8 @@
 	function initMap(){
 		var options = {
 
-			zoom: 13,
-			center: {lat: 1.2921, lng: 36.8219}
+			zoom: 8,
+			center: {lat: 3.3973, lng: 38.5559}
 		}
 
 		var map = new google.maps.Map(document.getElementById('map'), options);
@@ -19,7 +19,7 @@
 		//Add marker
 
 		var marker = new google.maps.Marker({
-			position:{lat: 1.2921, lng: 36.8219},
+			position:{lat: 3.5033, lng: 38.3640},
 			map:map 
 		});
 

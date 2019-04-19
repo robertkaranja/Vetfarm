@@ -27,7 +27,7 @@
 					<table data-vertable="ver1">
 						<thead>
 							<tr class="row100 head">
-								<button class="btn btn-success" style="float: right;">View All Veterinaries</button><br>
+								<!--<button class="btn btn-success" style="float: right;">View All Veterinaries</button><br>-->
 								<th class="column100 column1" data-column="column1">#</th>
 								<th class="column100 column3" data-column="column3">User Name</th>
 								<th class="column100 column4" data-column="column4">First Name</th>

@@ -21,9 +21,12 @@
                 height: 100vh;
                 margin: 0;
             }
-            footer{
+            
+            #head{
+                width: 100%;
+                height: 500px;
+                 background-color: black;
                 
-                color: green;
             }
 
             .full-height {
@@ -85,18 +88,14 @@
                 align-items: center;
                 background-color: grey;
             }
-            .all{
-                width: 100%;
-                height: 100%;
-                background-color: black;
-                opacity: 0.2;
-                position: absolute;
-                top:0;
-            }
+            
             
         </style>
     </head>
     <body>
+<header id="#head">
+        <h2><strong>Vetfarm</strong></h2>
+</header>
     <div class="all">
     <div class="well">
                 @if (Route::has('login'))
@@ -104,8 +103,8 @@
                         @auth
                         
                         @else
-                            <a href="{{ route('login') }}" ><button  class="btn btn-default">Login</button></a>
-                            <a href="{{ route('register') }}"><button  class="btn btn-default">Register</button></a>
+                            <a href="{{ route('login') }}" ><button  class="btn btn-primary"><strong>Login</strong> </button></a>
+                            <a href="{{ route('register') }}"><button  class="btn btn-primary"><strong>Register</strong></button></a>
                         @endauth
                     </div>
                 @endif
@@ -118,11 +117,10 @@
         </div>
         </div>
 
-<footer>
-    Copyright
-</footer>
+
 
     </body>
+    
 </html>
 
 

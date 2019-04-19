@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('location');
             $table->integer('user_id')->unsigned();
             $table->string('username');
+            $table->string('phone');
             /**$table->string('image');**/
             $table->foreign('user_id')->references('id')->on('users');
            /** $table->foreign('username')->references('name')->on('users');*/
